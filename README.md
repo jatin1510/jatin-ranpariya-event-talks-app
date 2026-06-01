@@ -1,4 +1,6 @@
-# AI Talks Event - 1 Day Schedule
+# AI Talks Event - 1 Day Schedule ✨
+
+This project was created using **vibe coding** 🌊 — a seamless collaboration between human intent and AI intelligence. It's built for speed, intuition, and high-signal delivery.
 
 This is a single-page application for a 1-day AI technical event. It features 6 technical talks, a lunch break, and a category-based search functionality.
 
@@ -7,6 +9,7 @@ This is a single-page application for a 1-day AI technical event. It features 6 
 - **Search:** Filter talks by category (e.g., AI, Ethics).
 - **Transitions:** 10-minute transitions between each 1-hour talk.
 - **Lunch Break:** A 1-hour lunch break integrated into the schedule.
+- **Built with Vibe:** Pure flow, zero friction.
 
 ## Tech Stack
 - **Server-side:** Node.js with Express.js.
