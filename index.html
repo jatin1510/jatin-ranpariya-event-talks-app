@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Talks Event</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+        .talk { border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        .lunch { background-color: #f0f0f0; padding: 15px; text-align: center; font-weight: bold; }
+        #search { width: 100%; padding: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>AI Talks Schedule</h1>
+    <input type="text" id="search" placeholder="Search by category (AI, Ethics, etc.)">
+    <div id="schedule"></div>
+
+    <script>
+        const talks = [
+            { time: "10:00 - 11:00", title: "Intro to LLMs", speaker: "Jatin", category: "AI", desc: "Basics of LLMs." },
+            { time: "11:10 - 12:10", title: "Prompt Engineering", speaker: "Jatin", category: "AI", desc: "Mastering prompts." },
+            { time: "12:20 - 13:20", title: "Ethics in AI", speaker: "Jatin", category: "AI, Ethics", desc: "AI accountability." },
+            { type: "lunch", time: "13:20 - 14:20" },
+            { time: "14:20 - 15:20", title: "Computer Vision", speaker: "Jatin", category: "AI", desc: "Seeing with AI." },
+            { time: "15:30 - 16:30", title: "Reinforcement Learning", speaker: "Jatin", category: "AI", desc: "Learning agents." },
+            { time: "16:40 - 17:40", title: "Future of AI", speaker: "Jatin", category: "AI", desc: "AI roadmap." }
+        ];
+
+        const scheduleDiv = document.getElementById('schedule');
+        const searchInput = document.getElementById('search');
+
+        function render(filter = "") {
+            scheduleDiv.innerHTML = "";
+            talks.forEach(t => {
+                if (t.type === "lunch") {
+                    scheduleDiv.innerHTML += `<div class="lunch">${t.time} - Lunch Break</div>`;
+                } else if (t.category.toLowerCase().includes(filter.toLowerCase())) {
+                    scheduleDiv.innerHTML += `
+                        <div class="talk">
+                            <h3>${t.time} | ${t.title}</h3>
+                            <p><strong>Speaker:</strong> ${t.speaker} | <strong>Category:</strong> ${t.category}</p>
+                            <p>${t.desc}</p>
+                        </div>`;
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => render(e.target.value));
+        render();
+    </script>
+</body>
+</html>
